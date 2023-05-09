@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1>Welcome, {{username}}</h1>
+        <table>
+            {% for item in items %}
+            <TR class="{{'table-header' if item.shares == 'Shares' else 'table-row'}}">
+                <TD class="c0">{{item.sign}}</TD>
+                <TD class="c1">{{item.symbol}}</TD>
+                <TD class="c2">{{item.shares}}</TD>
+                <TD class="c3">{{item.buy_price}}</TD>
+                <TD class="c4"><b>{{item.date}}</b></TD>
+            </TR>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

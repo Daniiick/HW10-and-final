@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1>Welcome, {{username}}</h1>
+        <table>
+            {% for item in items %}
+            <TR class="{{'table-header' if item.shares == 'Shares' else 'table-row'}}">
+                <TD class="c1">{{item.symbol}}</TD>
+                <TD class="c2">{{item.shares}}</TD>
+                <TD class="c3">{{item.price}}</TD>
+                <TD class="c4"><SPAN>{{item.total}}</SPAN></TD>
+            </TR>
+            {% endfor %}
+        </table>
+        <h3>
+            Funds left: {{cash}}
+        </h3>
+        <h2>
+            Total account value: {{networth}}
+        </h2>
+    </div>
+{% endblock %}
